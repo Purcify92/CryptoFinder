@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json; // Make sure to include this namespace for JsonConvert
+using Newtonsoft.Json; 
 
 namespace CryptoFinder
 {
@@ -13,7 +13,7 @@ namespace CryptoFinder
             Console.WriteLine("What crypto would you like to find information about?");
             string reply = Console.ReadLine().ToLower();
 
-            using var client = new HttpClient(); // Use 'using' to properly dispose of HttpClient
+            using var client = new HttpClient(); 
             var response = await client.GetAsync("https://api.coincap.io/v2/assets/" + reply);
 
             if (response.IsSuccessStatusCode)
